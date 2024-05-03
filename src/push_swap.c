@@ -6,11 +6,18 @@
 /*   By: msloot <msloot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 15:51:26 by msloot            #+#    #+#             */
-/*   Updated: 2024/05/01 17:49:27 by msloot           ###   ########.fr       */
+/*   Updated: 2024/05/03 17:34:08 by msloot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+static bool	handle_args(char *str)
+{
+		// split the string of numbers into seperate ones
+		// convert the seperate strings into numbers and check if there are only numbers
+		// set the numbers in "a" with lstlast
+}
 
 static bool	check_args(int argc, char *argv[])
 {
@@ -18,18 +25,10 @@ static bool	check_args(int argc, char *argv[])
 
 	i = 1;
 	if (argc < 2)
-		return (ft_puterr
-			("not enough arguments given, at least 2 needed"), false);
-	if (argc == 2)
-	{
-		// split the string of numbers into seperate ones
-		// convert the seperate strings into numbers and check if there are only numbers
-		// set the numbers in "a" with lstlast
-	}
+		return (false);
 	while (i < argc)
 	{
-		// convert the seperate strings into numbers and check if there are only numbers
-		// set the numbers in "a" with lstlast
+		handle_args(argv[i]);
 		i++;
 	}
 	return (true);

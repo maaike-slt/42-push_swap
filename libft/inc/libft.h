@@ -6,7 +6,7 @@
 /*   By: msloot <msloot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 14:56:09 by msloot            #+#    #+#             */
-/*   Updated: 2024/04/04 21:11:42 by msloot           ###   ########.fr       */
+/*   Updated: 2024/05/03 17:54:08 by msloot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,6 +114,7 @@ char		*ft_strjoin_free(char *s1, char *s2, bool free_s1, bool free_s2);
 char		*ft_substr(char const *s, size_t start, size_t len);
 char		*ft_strtrim(char const *s1, char const *set);
 char		**ft_split(char const *s, char c);
+char		**ft_split_any_of(char const *str, char *sep);
 
 ssize_t		ft_putchar_fd(char c, int fd);
 ssize_t		ft_putchar(char c);
