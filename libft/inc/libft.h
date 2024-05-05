@@ -6,7 +6,7 @@
 /*   By: msloot <msloot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 14:56:09 by msloot            #+#    #+#             */
-/*   Updated: 2024/05/03 17:54:08 by msloot           ###   ########.fr       */
+/*   Updated: 2024/05/05 15:33:41 by msloot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,7 @@ typedef struct s_base
 # define B16_LEN 16
 
 int			ft_atoi(const char *nptr);
+int			ft_atoi_digits_only(const char *nptr);
 char		*ft_itoa(int n);
 
 char		*ft_ntoa_base(ssize_t n, const t_base *b);
