@@ -6,7 +6,7 @@
 /*   By: msloot <msloot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 15:39:50 by msloot            #+#    #+#             */
-/*   Updated: 2024/05/01 17:23:03 by msloot           ###   ########.fr       */
+/*   Updated: 2024/05/07 14:18:26 by msloot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ typedef struct s_stack
 {
 	struct s_stack	*next;
 	struct s_stack	*prev;
+	size_t			value;
 }	t_stack;
 
 int	push_swap(int argc, char *argv[]);
