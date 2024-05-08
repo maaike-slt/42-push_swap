@@ -6,7 +6,7 @@
 #    By: msloot <msloot@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/14 19:19:04 by msloot            #+#    #+#              #
-#    Updated: 2024/05/01 15:37:29 by msloot           ###   ########.fr        #
+#    Updated: 2024/05/08 17:10:38 by msloot           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -55,7 +55,7 @@ SRC_PATH =	./src/
 OBJ_PATH =	./obj/
 INC =		./inc/
 
-SRC_NAME =	 \
+SRC_NAME =	 push_swap.c \
 
 SRC = $(addprefix $(SRC_PATH), $(SRC_NAME))
 
