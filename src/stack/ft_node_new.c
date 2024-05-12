@@ -1,23 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_node_new.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msloot <msloot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/19 18:01:34 by msloot            #+#    #+#             */
-/*   Updated: 2024/05/12 17:12:31 by msloot           ###   ########.fr       */
+/*   Created: 2024/05/12 18:15:07 by msloot            #+#    #+#             */
+/*   Updated: 2024/05/12 18:29:20 by msloot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "stack.h"
 
-size_t	ft_strlen(const char *s)
+t_node	*ft_node_new(t_value value)
 {
-	size_t	i;
+	t_node	*node;
 
-	i = 0;
-	while (s[i] != '\0')
-		i++;
-	return (i);
+	node = (t_node *)malloc(sizeof(t_node));
+	if (!node)
+		return (NULL);
+	node->value = value;
+	node->next = NULL;
+	node->prev = NULL;
+	return (node);
 }
+

@@ -6,7 +6,7 @@
 #    By: msloot <msloot@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/21 17:15:16 by msloot            #+#    #+#              #
-#    Updated: 2024/05/08 16:49:36 by msloot           ###   ########.fr        #
+#    Updated: 2024/05/12 17:23:49 by msloot           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,13 +48,15 @@ INC =				./inc/
 SRC_NAME = \
 	ft_is/ft_isalpha.c ft_is/ft_isdigit.c ft_is/ft_isalnum.c \
 	ft_is/ft_isascii.c ft_is/ft_isprint.c ft_is/ft_isspace.c \
-	ft_is/ft_is_in.c ft_is/ft_isupper.c ft_is/ft_islower.c \
+	ft_is/ft_isupper.c ft_is/ft_islower.c \
+	ft_is/ft_is_in.c  ft_is/ft_is_all.c ft_is/ft_is_any.c \
 	str/ft_strlen.c str/ft_strchr.c str/ft_strrchr.c str/ft_strcmp.c str/ft_strncmp.c str/ft_strcpy.c str/ft_strlcpy.c \
 	str/ft_strcat.c str/ft_strlcat.c str/ft_strnstr.c \
 	str/ft_toupper.c str/ft_tolower.c \
 	nbr/ft_nbrlen.c nbr/ft_nbrlen_base.c \
 	nbr/ft_unbrlen.c nbr/ft_unbrlen_base.c \
-	mem/ft_bzero.c mem/ft_memset.c mem/ft_memcpy.c mem/ft_memcmp.c mem/ft_memchr.c mem/ft_memmove.c mem/ft_free_2d.c\
+	mem/ft_bzero.c mem/ft_memset.c mem/ft_memcpy.c mem/ft_memcmp.c mem/ft_memchr.c mem/ft_memmove.c \
+	mem/ft_free_2d.c mem/ft_2d_size.c \
 	convert/ft_atoi.c convert/ft_atoi_digits_only.c  convert/ft_itoa.c \
 	convert/ft_ntoa_base.c convert/ft_ntoa.c \
 	convert/ft_untoa_base.c convert/ft_untoa.c \

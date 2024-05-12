@@ -1,23 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_node_last.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msloot <msloot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/19 18:01:34 by msloot            #+#    #+#             */
-/*   Updated: 2024/05/12 17:12:31 by msloot           ###   ########.fr       */
+/*   Created: 2023/11/07 15:20:17 by msloot            #+#    #+#             */
+/*   Updated: 2024/05/12 17:00:26 by msloot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "stack.h"
 
-size_t	ft_strlen(const char *s)
+t_node	*ft_stack_last_node(const t_stack *stk)
 {
-	size_t	i;
-
-	i = 0;
-	while (s[i] != '\0')
-		i++;
-	return (i);
+	return (ft_stack_node_at(stk, stk->size - 1));
 }

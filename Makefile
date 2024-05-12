@@ -6,7 +6,7 @@
 #    By: msloot <msloot@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/14 19:19:04 by msloot            #+#    #+#              #
-#    Updated: 2024/05/08 17:10:38 by msloot           ###   ########.fr        #
+#    Updated: 2024/05/12 18:34:27 by msloot           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,8 +18,6 @@ RM = 	rm -rf
 CFLAGS =	-Wall -Werror -Wextra
 # CFLAGS +=	-g
 # CFLAGS +=	-fsanitize=address
-
-UNAME = $(shell uname)
 
 # **************************************************************************** #
 #	MAKEFILE	#
@@ -55,7 +53,10 @@ SRC_PATH =	./src/
 OBJ_PATH =	./obj/
 INC =		./inc/
 
-SRC_NAME =	 push_swap.c \
+SRC_NAME =	main.c \
+			stack/ft_stack_node_at.c stack/ft_stack_last_node.c \
+			stack/ft_stack_add_front.c stack/ft_stack_add_back.c \
+			stack/ft_stack_new.c stack/ft_node_new.c \
 
 SRC = $(addprefix $(SRC_PATH), $(SRC_NAME))
 
@@ -79,6 +80,9 @@ endef
 # *************************************************************************** #
 #	RULES	#
 
+all:		launch $(NAME)
+	@printf "\n$(B)$(MAG)$(NAME) compiled$(D)\n"
+
 launch:
 	$(call progress_bar)
 
@@ -98,7 +102,6 @@ clean:
 	@$(RM) $(OBJ_NAME)
 	@$(MAKE) clean -C $(LIBPATH)
 	@echo "$(B)cleared$(D)"
-
 
 fclean:		clean
 	@$(RM) $(OBJ_PATH)

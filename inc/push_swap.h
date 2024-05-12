@@ -6,7 +6,7 @@
 /*   By: msloot <msloot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 15:39:50 by msloot            #+#    #+#             */
-/*   Updated: 2024/05/07 14:18:26 by msloot           ###   ########.fr       */
+/*   Updated: 2024/05/12 18:25:32 by msloot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,6 @@
 # include <stdbool.h>
 
 # include "../libft/inc/libft.h"
-
-typedef struct s_stack
-{
-	struct s_stack	*next;
-	struct s_stack	*prev;
-	size_t			value;
-}	t_stack;
-
-int	push_swap(int argc, char *argv[]);
+# include "./stack.h"
 
 #endif

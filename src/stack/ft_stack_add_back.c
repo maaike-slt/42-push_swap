@@ -1,23 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_stack_add_back.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msloot <msloot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/19 18:01:34 by msloot            #+#    #+#             */
-/*   Updated: 2024/05/12 17:12:31 by msloot           ###   ########.fr       */
+/*   Created: 2024/05/12 17:36:33 by msloot            #+#    #+#             */
+/*   Updated: 2024/05/12 18:17:29 by msloot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "stack.h"
 
-size_t	ft_strlen(const char *s)
+void	ft_stack_add_back(t_stack *stk, t_node *new)
 {
-	size_t	i;
+	t_node	*tmp;
 
-	i = 0;
-	while (s[i] != '\0')
-		i++;
-	return (i);
+	if (!stk || !new)
+		return ;
+	if (stk->head == NULL)
+	{
+		stk->head = new;
+		stk->head->next = stk->head;
+		stk->head->prev = stk->head;
+		return ;
+	}
+	tmp = ft_stack_last_node(stk);
+	tmp->next = new;
+	new->next = stk->head;
+	stk->head->prev = new;
+	new->prev = tmp;
+	stk->size += 1;
 }
