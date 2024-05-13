@@ -6,7 +6,7 @@
 #    By: msloot <msloot@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/14 19:19:04 by msloot            #+#    #+#              #
-#    Updated: 2024/05/12 18:34:27 by msloot           ###   ########.fr        #
+#    Updated: 2024/05/13 22:11:47 by msloot           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ AR =	ar rcs
 RM = 	rm -rf
 
 CFLAGS =	-Wall -Werror -Wextra
-# CFLAGS +=	-g
+CFLAGS +=	-g
 # CFLAGS +=	-fsanitize=address
 
 # **************************************************************************** #
@@ -53,7 +53,7 @@ SRC_PATH =	./src/
 OBJ_PATH =	./obj/
 INC =		./inc/
 
-SRC_NAME =	main.c \
+SRC_NAME =	main.c parse.c \
 			stack/ft_stack_node_at.c stack/ft_stack_last_node.c \
 			stack/ft_stack_add_front.c stack/ft_stack_add_back.c \
 			stack/ft_stack_new.c stack/ft_node_new.c \
@@ -96,7 +96,7 @@ $(OBJ_PATH)%.o: $(SRC_PATH)%.c
 
 $(LIBNAME):
 	@printf "$(D)$(B)$(BLU)\n$(NAME) objects compiled\n\n$(D)"
-	@$(MAKE) -C $(LIBPATH) CFLAGS+=-DWITH_OPEN=1
+	@$(MAKE) -C $(LIBPATH)
 
 clean:
 	@$(RM) $(OBJ_NAME)

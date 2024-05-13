@@ -6,7 +6,7 @@
 /*   By: msloot <msloot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 16:42:41 by msloot            #+#    #+#             */
-/*   Updated: 2024/05/08 16:58:04 by msloot           ###   ########.fr       */
+/*   Updated: 2024/05/13 21:44:04 by msloot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 char	**ft_split_whitespace(char const *str)
 {
-	ft_split_any_of(str, WHITESPACE);
+	return (ft_split_any_of(str, WHITESPACE));
 }
