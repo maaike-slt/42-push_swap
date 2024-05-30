@@ -6,7 +6,7 @@
 /*   By: msloot <msloot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 15:39:50 by msloot            #+#    #+#             */
-/*   Updated: 2024/05/13 22:11:59 by msloot           ###   ########.fr       */
+/*   Updated: 2024/05/30 21:52:42 by msloot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@
 # include "../libft/inc/libft.h"
 # include "./stack.h"
 
-bool	check_args(int argc, char *argv[], t_stack *a);
+bool	parse(int argc, char *argv[], t_stack *a);
+
+bool	double_nbr(t_stack *a);
 
 #endif

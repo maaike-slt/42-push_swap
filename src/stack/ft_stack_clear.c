@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_node_last.c                                    :+:      :+:    :+:   */
+/*   ft_stack_clear.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msloot <msloot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/07 15:20:17 by msloot            #+#    #+#             */
-/*   Updated: 2024/05/12 17:00:26 by msloot           ###   ########.fr       */
+/*   Created: 2024/05/30 21:16:17 by msloot            #+#    #+#             */
+/*   Updated: 2024/05/30 22:17:21 by msloot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "stack.h"
 
-t_node	*ft_stack_node_at(const t_stack *stk, size_t index)
+void	ft_stack_clear(t_stack *stk)
 {
 	size_t	i;
-	t_node	*cur;
+	t_node	*tmp;
 
-	if (stk->head == NULL)
-		return (NULL);
-	cur = stk->head;
+	if (!stk || !stk->head)
+		return ;
 	i = 0;
-	while (i < index)
+	while (i < stk->size)
 	{
-		cur = cur->next;
+		tmp = stk->head->next;
+		ft_node_free(stk->head);
+		stk->head = tmp;
 		i++;
 	}
-	return (cur);
 }

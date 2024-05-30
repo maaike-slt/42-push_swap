@@ -6,7 +6,7 @@
 /*   By: msloot <msloot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/12 18:15:36 by msloot            #+#    #+#             */
-/*   Updated: 2024/05/12 18:35:46 by msloot           ###   ########.fr       */
+/*   Updated: 2024/05/30 22:01:57 by msloot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,12 @@ typedef struct s_stack
 t_stack		ft_stack_new(void);
 t_node		*ft_node_new(t_value value);
 
-t_node		*ft_stack_last_node(const t_stack *stk);
-t_node		*ft_stack_node_at(const t_stack *stk, size_t index);
-
 void		ft_stack_add_front(t_stack *stk, t_node *new);
 void		ft_stack_add_back(t_stack *stk, t_node *new);
+
+void		ft_stack_clear(t_stack *stk);
+void		ft_node_free(t_node *node);
+
+void		ft_stack_print(t_stack *stk);
 
 #endif

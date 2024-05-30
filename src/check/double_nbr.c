@@ -1,34 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   double_nbr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msloot <msloot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/01 15:51:26 by msloot            #+#    #+#             */
-/*   Updated: 2024/05/30 21:52:31 by msloot           ###   ########.fr       */
+/*   Created: 2024/05/30 18:27:23 by msloot            #+#    #+#             */
+/*   Updated: 2024/05/30 21:35:39 by msloot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char *argv[])
+bool	double_nbr(t_stack *a)
 {
-	t_stack	a;
+	size_t	i;
+	size_t	p;
+	t_node	*current_i;
+	t_node	*current_p;
 
-	a = ft_stack_new();
-	if (!parse(argc, argv, &a))
-		return (1);
-	ft_stack_print(&a);
-	if (!a.size)
-		return (0);
-	if (double_nbr(&a))
+	if (!a->head)
+		return (false);
+	i = 0;
+	current_i = a->head;
+	while (i < a->size)
 	{
-		ft_puterr(\
-"one or more number(s) have been found double, no duplictes allowed");
-		ft_stack_clear(&a);
-		return (1);
+		p = i + 1;
+		current_p = current_i->next;
+		while (p < a->size)
+		{
+			if (current_i->value == current_p->value)
+				return (true);
+			p++;
+			current_p = current_p->next;
+		}
+		i++;
+		current_i = current_i->next;
 	}
-	ft_stack_clear(&a);
-	return (0);
+	return (false);
 }

@@ -1,18 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_node_last.c                                    :+:      :+:    :+:   */
+/*   ft_node_free.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msloot <msloot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/07 15:20:17 by msloot            #+#    #+#             */
-/*   Updated: 2024/05/12 17:00:26 by msloot           ###   ########.fr       */
+/*   Created: 2024/05/30 21:16:17 by msloot            #+#    #+#             */
+/*   Updated: 2024/05/30 21:32:43 by msloot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "stack.h"
 
-t_node	*ft_stack_last_node(const t_stack *stk)
+void	ft_node_free(t_node *node)
 {
-	return (ft_stack_node_at(stk, stk->size - 1));
+	if (!node)
+		return ;
+	free(node);
 }

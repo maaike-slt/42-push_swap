@@ -1,32 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stack_add_back.c                                :+:      :+:    :+:   */
+/*   ft_stack_print.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msloot <msloot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/12 17:36:33 by msloot            #+#    #+#             */
-/*   Updated: 2024/05/30 22:16:55 by msloot           ###   ########.fr       */
+/*   Created: 2024/05/30 21:38:54 by msloot            #+#    #+#             */
+/*   Updated: 2024/05/30 22:15:42 by msloot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "stack.h"
 
-void	ft_stack_add_back(t_stack *stk, t_node *new)
+#include <unistd.h>
+
+ssize_t		ft_putnbr(ssize_t n);
+
+void	ft_stack_print(t_stack *stk)
 {
-	if (!stk || !new)
+	size_t	i;
+	t_node	*current;
+
+	if (!stk || !stk->head)
 		return ;
-	if (stk->head == NULL)
+	i = 0;
+	current = stk->head;
+	while (i < stk->size)
 	{
-		stk->head = new;
-		stk->head->next = stk->head;
-		stk->head->prev = stk->head;
-		stk->size += 1;
-		return ;
+		ft_putnbr(current->value);
+		write(1, "\n", 1);
+		i++;
+		current = current->next;
 	}
-	new->next = stk->head;
-	new->prev = stk->head->prev;
-	stk->head->prev->next = new;
-	stk->head->prev = new;
-	stk->size += 1;
 }
