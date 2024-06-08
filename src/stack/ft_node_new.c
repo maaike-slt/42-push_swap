@@ -6,7 +6,7 @@
 /*   By: msloot <msloot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/12 18:15:07 by msloot            #+#    #+#             */
-/*   Updated: 2024/05/12 18:29:20 by msloot           ###   ########.fr       */
+/*   Updated: 2024/06/08 20:25:55 by msloot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,4 +24,3 @@ t_node	*ft_node_new(t_value value)
 	node->prev = NULL;
 	return (node);
 }
-

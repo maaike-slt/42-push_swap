@@ -6,7 +6,7 @@
 /*   By: msloot <msloot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 22:36:02 by msloot            #+#    #+#             */
-/*   Updated: 2024/06/07 22:44:04 by msloot           ###   ########.fr       */
+/*   Updated: 2024/06/08 20:25:47 by msloot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ void	push_b(t_stack *a, t_stack *b)
 
 	tmp = a->head;
 	ft_stack_remove_head(a);
-
 	ft_stack_add_front(b, tmp);
 	ft_putstr("pb\n");
 }
