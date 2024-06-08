@@ -1,24 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pa.c                                               :+:      :+:    :+:   */
+/*   rrb.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msloot <msloot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/07 20:59:33 by msloot            #+#    #+#             */
-/*   Updated: 2024/06/08 14:16:36 by msloot           ###   ########.fr       */
+/*   Created: 2024/06/08 14:11:27 by msloot            #+#    #+#             */
+/*   Updated: 2024/06/08 14:15:33 by msloot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	push_a(t_stack *a, t_stack *b)
+void	reverse_rotate_b(t_stack *b)
 {
-	t_node	*tmp;
-
-	tmp = b->head;
-	ft_stack_remove_head(b);
-
-	ft_stack_add_front(a, tmp);
-	ft_putstr("pa\n");
+	reverse_rotate_stk(b);
+	ft_putstr("rrb\n");
 }

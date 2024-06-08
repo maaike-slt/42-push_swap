@@ -6,7 +6,7 @@
 #    By: msloot <msloot@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/14 19:19:04 by msloot            #+#    #+#              #
-#    Updated: 2024/06/07 22:35:54 by msloot           ###   ########.fr        #
+#    Updated: 2024/06/08 13:46:02 by msloot           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -60,6 +60,7 @@ SRC_NAME =	main.c parse.c \
 			stack/ft_stack_clear.c stack/ft_node_free.c \
 			stack/ft_stack_print.c \
 			action/sa.c action/sb.c action/ss.c action/pa.c action/pb.c \
+			action/ra.c action/rb.c action/rr.c action/rs.c \
 
 SRC = $(addprefix $(SRC_PATH), $(SRC_NAME))
 

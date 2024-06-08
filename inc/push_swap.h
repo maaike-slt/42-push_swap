@@ -6,7 +6,7 @@
 /*   By: msloot <msloot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 15:39:50 by msloot            #+#    #+#             */
-/*   Updated: 2024/06/07 21:07:11 by msloot           ###   ########.fr       */
+/*   Updated: 2024/06/08 13:48:05 by msloot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,10 @@ void	swap_b(t_stack *b);
 void	swap_both(t_stack *a, t_stack *b);
 void	push_a(t_stack *a, t_stack *b);
 void	push_b(t_stack *a, t_stack *b);
+void	rotate_a(t_stack *a);
+void	rotate_b(t_stack *b);
+void	rotate_stk(t_stack *stk);
+void	rotate_both(t_stack *a, t_stack *b);
 
 bool	double_nbr(t_stack *a);
 
