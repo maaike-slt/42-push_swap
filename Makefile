@@ -6,7 +6,7 @@
 #    By: msloot <msloot@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/14 19:19:04 by msloot            #+#    #+#              #
-#    Updated: 2024/06/08 13:46:02 by msloot           ###   ########.fr        #
+#    Updated: 2024/06/08 18:01:55 by msloot           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,13 +54,14 @@ OBJ_PATH =	./obj/
 INC =		./inc/
 
 SRC_NAME =	main.c parse.c \
-			check/double_nbr.c \
+			check/double_nbr.c check/in_order.c \
 			stack/ft_stack_add_front.c stack/ft_stack_add_back.c \
 			stack/ft_stack_new.c stack/ft_node_new.c stack/ft_stack_remove_head.c \
 			stack/ft_stack_clear.c stack/ft_node_free.c \
 			stack/ft_stack_print.c \
 			action/sa.c action/sb.c action/ss.c action/pa.c action/pb.c \
 			action/ra.c action/rb.c action/rr.c action/rs.c \
+			action/rra.c action/rrb.c action/rrr.c action/rrs.c \
 
 SRC = $(addprefix $(SRC_PATH), $(SRC_NAME))
 

@@ -6,7 +6,7 @@
 /*   By: msloot <msloot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 15:39:50 by msloot            #+#    #+#             */
-/*   Updated: 2024/06/08 13:48:05 by msloot           ###   ########.fr       */
+/*   Updated: 2024/06/08 18:04:51 by msloot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,12 @@ void	rotate_a(t_stack *a);
 void	rotate_b(t_stack *b);
 void	rotate_stk(t_stack *stk);
 void	rotate_both(t_stack *a, t_stack *b);
+void	reverse_rotate_a(t_stack *a);
+void	reverse_rotate_b(t_stack *a);
+void	reverse_rotate_stk(t_stack *stk);
+void	reverse_rotate_both(t_stack *a, t_stack *b);
 
 bool	double_nbr(t_stack *a);
+bool	in_order(t_stack *stk);
 
 #endif

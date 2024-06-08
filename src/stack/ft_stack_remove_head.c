@@ -6,7 +6,7 @@
 /*   By: msloot <msloot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 22:28:05 by msloot            #+#    #+#             */
-/*   Updated: 2024/06/07 22:50:10 by msloot           ###   ########.fr       */
+/*   Updated: 2024/06/08 17:33:14 by msloot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,4 +20,5 @@ void	ft_stack_remove_head(t_stack *stk)
 	stk->head = stk->head->next;
 	stk->head->prev = tmp->prev;
 	tmp->prev->next = stk->head;
+	stk->size--;
 }
