@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   middle_loop.c                                      :+:      :+:    :+:   */
+/*   loop.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msloot <msloot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 20:05:56 by msloot            #+#    #+#             */
-/*   Updated: 2024/06/16 15:34:49 by msloot           ###   ########.fr       */
+/*   Updated: 2024/06/16 19:24:50 by msloot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,3 +29,13 @@ void	loop(t_stack *a, t_stack *b)
 	{
 	}
 }
+
+/*
+go on every element of stack a
+element cost = \
+	abs(calc_direction(element))	// get element to top
+	+ 1								// push_b
+	+ abs(calc_direction(
+		the max element on stack b that is still smaller than element or the biggest if none are smaller
+	))
+*/
