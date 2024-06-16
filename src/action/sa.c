@@ -6,7 +6,7 @@
 /*   By: msloot <msloot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 20:25:11 by msloot            #+#    #+#             */
-/*   Updated: 2024/06/08 18:13:33 by msloot           ###   ########.fr       */
+/*   Updated: 2024/06/16 14:38:55 by msloot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,6 @@
 
 void	swap_a(t_stack *a)
 {
-	t_value	tmp;
-
-	tmp = a->head->value;
-	a->head->value = a->head->next->value;
-	a->head->next->value = tmp;
+	swap_stk(a);
 	ft_putstr("sa\n");
 }

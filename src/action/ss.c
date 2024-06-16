@@ -6,7 +6,7 @@
 /*   By: msloot <msloot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 20:51:43 by msloot            #+#    #+#             */
-/*   Updated: 2024/06/07 20:56:22 by msloot           ###   ########.fr       */
+/*   Updated: 2024/06/12 21:01:51 by msloot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	swap_both(t_stack *a, t_stack *b)
 {
-	swap_a(a);
-	swap_b(b);
+	swap_stk(a);
+	swap_stk(b);
 	ft_putstr("ss\n");
 }

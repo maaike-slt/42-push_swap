@@ -6,7 +6,7 @@
 /*   By: msloot <msloot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 21:30:35 by msloot            #+#    #+#             */
-/*   Updated: 2024/05/30 21:59:27 by msloot           ###   ########.fr       */
+/*   Updated: 2024/06/16 15:37:25 by msloot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,8 +83,6 @@ bool	parse(int argc, char *argv[], t_stack *a)
 {
 	size_t	i;
 
-	if (argc < 2)
-		return (true);
 	i = 1;
 	while (i < (size_t)argc)
 	{
