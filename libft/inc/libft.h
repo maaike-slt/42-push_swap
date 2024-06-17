@@ -6,7 +6,7 @@
 /*   By: msloot <msloot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 14:56:09 by msloot            #+#    #+#             */
-/*   Updated: 2024/05/13 20:40:08 by msloot           ###   ########.fr       */
+/*   Updated: 2024/06/17 23:21:16 by msloot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ int			ft_strncmp(const char *s1, const char *s2, size_t n);
 size_t		ft_strlen(const char *s);
 char		*ft_strnstr(const char *big, const char *little, size_t len);
 
+size_t		ft_abs(ssize_t nbr);
 size_t		ft_nbrlen_base(ssize_t n, size_t base);
 size_t		ft_unbrlen_base(size_t n, size_t base);
 size_t		ft_nbrlen(ssize_t n);
