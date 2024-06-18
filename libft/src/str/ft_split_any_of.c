@@ -6,24 +6,26 @@
 /*   By: msloot <msloot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/29 11:53:23 by msloot            #+#    #+#             */
-/*   Updated: 2024/05/08 17:06:20 by msloot           ###   ########.fr       */
+/*   Updated: 2024/05/13 22:33:19 by msloot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	ft_strlen_until_sep(const char *str, char *sep, size_t i)
+static size_t	ft_strlen_until_sep(const char *str, const char *sep)
 {
-	size_t	s;
+	size_t	i;
 
-	while (str[i] != '\0')
-	{
-		s = 0;
-		while (str[i] == sep[s])
-			s++;
+	i = 0;
+	while (str[i] != '\0' && !ft_is_in(sep, str[i]))
 		i++;
-	}
 	return (i);
+}
+
+static void	ft_skip(const char *str, size_t *i, const char *sep, bool in)
+{
+	while (str[*i] != '\0' && in == ft_is_in(sep, str[*i]))
+		*i += 1;
 }
 
 static bool	process_word(char **split,
@@ -33,7 +35,7 @@ static bool	process_word(char **split,
 {
 	if (!split)
 		return (true);
-	split[split_i] = ft_strndup(str, ft_strlen_until_sep(str, sep, 0));
+	split[split_i] = ft_strndup(str, ft_strlen_until_sep(str, sep));
 	if (split[split_i])
 		return (true);
 	split_i--;
@@ -50,20 +52,19 @@ static ssize_t	process(char **split, const char *str, char *sep)
 {
 	ssize_t	split_i;
 	size_t	i;
-	size_t	s;
 
 	split_i = 0;
 	i = 0;
 	while (str[i] != '\0')
 	{
-		i += ft_strlen_until_sep(str, sep, i);
+		ft_skip(str, &i, sep, true);
 		if (str[i] != '\0')
 		{
 			if (!process_word(split, split_i, &str[i], sep))
 				return (-1);
 			split_i++;
 		}
-		i += ft_strlen_until_sep(str, sep, i);
+		ft_skip(str, &i, sep, false);
 	}
 	return (split_i);
 }
