@@ -6,7 +6,7 @@
 /*   By: msloot <msloot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 15:39:50 by msloot            #+#    #+#             */
-/*   Updated: 2024/06/17 23:36:47 by msloot           ###   ########.fr       */
+/*   Updated: 2024/06/18 19:19:33 by msloot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,10 @@ bool	in_order(t_stack *stk);
 
 void	start(t_stack *a);
 void	loop(t_stack *a, t_stack *b);
+void	cheapest(t_stack *a, t_stack *b, t_value *value, size_t *index);
 size_t	cost(t_stack *a, t_stack *b, t_value value, size_t value_index);
 ssize_t	calc_direction(size_t index, size_t size);
 size_t	find_dest_b(t_value v, t_stack *b);
+void	sort_to_b(t_stack *a, t_stack *b, t_value value, size_t index);
 
 #endif
