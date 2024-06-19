@@ -1,34 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   start.c                                            :+:      :+:    :+:   */
+/*   rotate_donut.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msloot <msloot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/12 20:09:41 by msloot            #+#    #+#             */
-/*   Updated: 2024/06/19 20:31:14 by msloot           ###   ########.fr       */
+/*   Created: 2024/06/19 21:44:02 by msloot            #+#    #+#             */
+/*   Updated: 2024/06/19 21:44:34 by msloot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-bool	start(t_stack *a, t_stack *b)
+void	rotate_donut_a(t_stack *a, ssize_t rotate_amount_a)
 {
-	if (a->size == 3)
+	while (rotate_amount_a > 0)
 	{
-		three(a);
-		return (false);
+		rotate_a(a);
+		rotate_amount_a--;
 	}
-	// TODO: remove ft_stack_print()
-	ft_putstr("== A ==\n");
-	ft_stack_print(a);
-	ft_putstr("=====\n");
-	push_b(a, b);
-	push_b(a, b);
-	ft_putstr("== A ==\n");
-	ft_stack_print(a);
-	ft_putstr("== B ==\n");
-	ft_stack_print(b);
-	ft_putstr("=====\n");
-	return (true);
+	while (rotate_amount_a < 0)
+	{
+		reverse_rotate_a(a);
+		rotate_amount_a++;
+	}
+}
+
+void	rotate_donut_b(t_stack *b, ssize_t rotate_amount_b)
+{
+	while (rotate_amount_b > 0)
+	{
+		rotate_b(b);
+		rotate_amount_b--;
+	}
+	while (rotate_amount_b < 0)
+	{
+		reverse_rotate_b(b);
+		rotate_amount_b++;
+	}
 }

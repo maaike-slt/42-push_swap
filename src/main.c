@@ -6,7 +6,7 @@
 /*   By: msloot <msloot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 15:51:26 by msloot            #+#    #+#             */
-/*   Updated: 2024/06/18 19:40:54 by msloot           ###   ########.fr       */
+/*   Updated: 2024/06/19 20:29:29 by msloot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ int	main(int argc, char *argv[])
 		ft_stack_clear(&a);
 		return (1);
 	}
-	start(&a);
+	solve(&a);
 	ft_stack_clear(&a);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: msloot <msloot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 15:39:50 by msloot            #+#    #+#             */
-/*   Updated: 2024/06/18 19:19:33 by msloot           ###   ########.fr       */
+/*   Updated: 2024/06/19 21:44:28 by msloot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,12 +42,19 @@ void	reverse_rotate_both(t_stack *a, t_stack *b);
 bool	double_nbr(t_stack *a);
 bool	in_order(t_stack *stk);
 
-void	start(t_stack *a);
+void	solve(t_stack *a);
+bool	start(t_stack *a, t_stack *b);
 void	loop(t_stack *a, t_stack *b);
+void	end(t_stack *a, t_stack *b);
+
 void	cheapest(t_stack *a, t_stack *b, t_value *value, size_t *index);
 size_t	cost(t_stack *a, t_stack *b, t_value value, size_t value_index);
 ssize_t	calc_direction(size_t index, size_t size);
 size_t	find_dest_b(t_value v, t_stack *b);
 void	sort_to_b(t_stack *a, t_stack *b, t_value value, size_t index);
+size_t	find_dest_a(t_value v, t_stack *a);
+void	sort_to_a(t_stack *a, t_stack *b, t_value value);
+void	rotate_donut_a(t_stack *a, ssize_t rotate_amount_a);
+void	rotate_donut_b(t_stack *b, ssize_t rotate_amount_b);
 
 #endif
