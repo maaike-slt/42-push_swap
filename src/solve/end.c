@@ -6,7 +6,7 @@
 /*   By: msloot <msloot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 20:09:41 by msloot            #+#    #+#             */
-/*   Updated: 2024/06/19 21:51:37 by msloot           ###   ########.fr       */
+/*   Updated: 2024/06/19 22:43:09 by msloot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,16 +41,7 @@ void	end(t_stack *a, t_stack *b)
 	ssize_t	rotate_amount_a;
 
 	while (b->size > 0)
-	{
 		sort_to_a(a, b, b->head->value);
-		ft_putstr("== A ==\n");
-		ft_stack_print(a);
-		ft_putstr("== B ==\n");
-		ft_stack_print(b);
-		ft_putstr("=====\n");
-	}
 	rotate_amount_a = calc_direction(smallest(a), a->size);
 	rotate_donut_a(a, rotate_amount_a);
-	ft_putstr("== A ==\n");
-	ft_stack_print(a);
 }

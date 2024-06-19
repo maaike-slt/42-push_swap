@@ -6,7 +6,7 @@
 /*   By: msloot <msloot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 20:05:56 by msloot            #+#    #+#             */
-/*   Updated: 2024/06/19 20:38:50 by msloot           ###   ########.fr       */
+/*   Updated: 2024/06/19 22:43:07 by msloot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,5 @@ void	loop(t_stack *a, t_stack *b)
 	{
 		cheapest(a, b, &cheapest_value, &cheapest_index);
 		sort_to_b(a, b, cheapest_value, cheapest_index);
-		ft_putstr("== A ==\n");
-		ft_stack_print(a);
-		ft_putstr("== B ==\n");
-		ft_stack_print(b);
-		ft_putstr("=====\n");
 	}
 }
