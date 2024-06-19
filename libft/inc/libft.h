@@ -6,7 +6,7 @@
 /*   By: msloot <msloot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 14:56:09 by msloot            #+#    #+#             */
-/*   Updated: 2024/06/17 23:21:16 by msloot           ###   ########.fr       */
+/*   Updated: 2024/06/19 22:07:08 by msloot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,10 @@ size_t		ft_strlen(const char *s);
 char		*ft_strnstr(const char *big, const char *little, size_t len);
 
 size_t		ft_abs(ssize_t nbr);
+size_t		ft_umin(size_t a, size_t b);
+ssize_t		ft_min(ssize_t a, ssize_t b);
+size_t		ft_umax(size_t a, size_t b);
+ssize_t		ft_max(ssize_t a, ssize_t b);
 size_t		ft_nbrlen_base(ssize_t n, size_t base);
 size_t		ft_unbrlen_base(size_t n, size_t base);
 size_t		ft_nbrlen(ssize_t n);
