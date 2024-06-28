@@ -6,7 +6,7 @@
 /*   By: msloot <msloot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 20:09:41 by msloot            #+#    #+#             */
-/*   Updated: 2024/06/19 22:43:02 by msloot           ###   ########.fr       */
+/*   Updated: 2024/06/28 20:49:24 by msloot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,23 @@
 
 bool	start(t_stack *a, t_stack *b)
 {
+	if (a->size == 1)
+		return (false);
+	if (a->size == 2)
+	{
+		if (a->head->value > a->head->next->value)
+			swap_a(a);
+		return (false);
+	}
 	if (a->size == 3)
 	{
 		three(a);
 		return (false);
+	}
+	if (a->size == 4)
+	{
+		push_b(a, b);
+		return (true);
 	}
 	push_b(a, b);
 	push_b(a, b);
