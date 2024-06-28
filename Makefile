@@ -6,13 +6,13 @@
 #    By: msloot <msloot@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/14 19:19:04 by msloot            #+#    #+#              #
-#    Updated: 2024/06/19 21:44:51 by msloot           ###   ########.fr        #
+#    Updated: 2024/06/28 21:08:52 by msloot           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME =	push_swap
+PUSH_SWAP_NAME =	push_swap
+CHECKER_NAME =		checker
 CC = 	cc
-AR =	ar rcs
 RM = 	rm -rf
 
 CFLAGS =	-Wall -Werror -Wextra
@@ -53,7 +53,7 @@ SRC_PATH =	./src/
 OBJ_PATH =	./obj/
 INC =		./inc/
 
-SRC_NAME =	main.c parse.c \
+SRC_NAME =	parse.c \
 			check/double_nbr.c check/in_order.c \
 			solve/solve.c \
 			solve/start.c solve/loop.c solve/three.c solve/end.c \
@@ -68,19 +68,24 @@ SRC_NAME =	main.c parse.c \
 			action/ra.c action/rb.c action/rr.c action/rs.c \
 			action/rra.c action/rrb.c action/rrr.c action/rrs.c \
 
-SRC = $(addprefix $(SRC_PATH), $(SRC_NAME))
+PUSH_SWAP_SRC_NAME = main.c $(SRC_NAME)
+CHECKER_SRC_NAME = checker/main.c $(SRC_NAME)
 
-# SRC =		$(wildcard $(SRC_PATH)*.c) $(wildcard $(SRC_PATH)**/*.c)
-# SRC_NAME =	$(subst $(SRC_PATH), , $(SRC))
+# SRC = $(addprefix $(SRC_PATH), $(SRC_NAME))
+PUSH_SWAP_SRC = $(addprefix $(SRC_PATH), $(PUSH_SWAP_SRC_NAME))
+CHECKER_SRC = $(addprefix $(SRC_PATH), $(CHECKER_SRC_NAME))
 
-OBJ_NAME =	$(SRC_NAME:.c=.o)
-OBJ =		$(addprefix $(OBJ_PATH), $(OBJ_NAME))
+PUSH_SWAP_OBJ_NAME = $(PUSH_SWAP_SRC_NAME:.c=.o)
+PUSH_SWAP_OBJ = $(addprefix $(OBJ_PATH), $(PUSH_SWAP_OBJ_NAME))
+
+CHECKER_OBJ_NAME = $(CHECKER_SRC_NAME:.c=.o)
+CHECKER_OBJ = $(addprefix $(OBJ_PATH), $(CHECKER_OBJ_NAME))
 
 # *************************************************************************** #
 
 define	progress_bar
 	i=0
-	while [[ $$i -le $(words $(SRC)) ]] ; do \
+	while [[ $$i -le $(words $(PUSH_SWAP_SRC) $(CHECKER_SRC)) ]] ; do \
 		printf " " ; \
 		((i = i + 1)) ; \
 	done
@@ -90,14 +95,17 @@ endef
 # *************************************************************************** #
 #	RULES	#
 
-all:		launch $(NAME)
-	@printf "\n$(B)$(MAG)$(NAME) compiled$(D)\n"
+all:		launch $(PUSH_SWAP_NAME) $(CHECKER_NAME)
+	@printf "\n$(B)$(MAG)$(PUSH_SWAP_NAME) and $(CHECKER_NAME) compiled$(D)\n"
 
 launch:
 	$(call progress_bar)
 
-$(NAME):	$(OBJ) $(LIBNAME)
-	$(CC) $(CFLAGS) $(OBJ) $(LIBNAME) -o $(NAME)
+$(PUSH_SWAP_NAME):	$(OBJ) $(LIBNAME)
+	$(CC) $(CFLAGS) $(PUSH_SWAP_OBJ) $(LIBNAME) -o $(PUSH_SWAP_NAME)
+
+$(CHECKER_NAME):	$(OBJ) $(LIBNAME)
+	$(CC) $(CFLAGS) $(CHECKER_OBJ) $(LIBNAME) -o $(CHECKER_NAME)
 
 $(OBJ_PATH)%.o: $(SRC_PATH)%.c
 	@mkdir -p $(dir $@) # 2> /dev/null || true
@@ -105,7 +113,7 @@ $(OBJ_PATH)%.o: $(SRC_PATH)%.c
 	@printf "█"
 
 $(LIBNAME):
-	@printf "$(D)$(B)$(BLU)\n$(NAME) objects compiled\n\n$(D)"
+	@printf "$(D)$(B)$(BLU)\n$(PUSH_SWAP_NAME) and $(CHECKER_NAME) objects compiled\n\n$(D)"
 	@$(MAKE) -C $(LIBPATH)
 
 clean:
@@ -115,7 +123,8 @@ clean:
 
 fclean:		clean
 	@$(RM) $(OBJ_PATH)
-	@$(RM) $(NAME)
+	@$(RM) $(PUSH_SWAP_NAME)
+	@$(RM) $(CHECKER_NAME)
 	@$(MAKE) fclean -C $(LIBPATH)
 
 re:			fclean all
