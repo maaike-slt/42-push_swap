@@ -6,7 +6,7 @@
 /*   By: msloot <msloot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 20:05:56 by msloot            #+#    #+#             */
-/*   Updated: 2024/07/01 17:09:59 by msloot           ###   ########.fr       */
+/*   Updated: 2024/07/01 22:29:54 by msloot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static bool	continue_loop(t_stack *a, t_stack *b)
 		return (false);
 	if (a->size == 3)
 	{
-		three(a);	// TODO: use optimized three that does not care about the order of the stack, only of the donut (in other words, the least rotate)
+		order_three(a);
 		return (false);
 	}
 	return (true);

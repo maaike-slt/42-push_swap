@@ -6,7 +6,7 @@
 /*   By: msloot <msloot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 20:09:41 by msloot            #+#    #+#             */
-/*   Updated: 2024/07/01 18:17:57 by msloot           ###   ########.fr       */
+/*   Updated: 2024/07/01 20:43:20 by msloot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,10 @@ bool	start(t_stack *a, t_stack *b)
 	}
 	if (a->size == 4)
 	{
-		push_b(a, b);
+		push_b(a, b, true);
 		return (true);
 	}
-	push_b(a, b);
-	push_b(a, b);
+	push_b(a, b, true);
+	push_b(a, b, true);
 	return (true);
 }
