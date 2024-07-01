@@ -6,7 +6,7 @@
 /*   By: msloot <msloot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 20:09:41 by msloot            #+#    #+#             */
-/*   Updated: 2024/06/28 20:49:24 by msloot           ###   ########.fr       */
+/*   Updated: 2024/07/01 18:17:57 by msloot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 
 bool	start(t_stack *a, t_stack *b)
 {
+	if (in_order(a) && a->head->value < a->head->next->value
+		&& a->head->value < a->head->prev->value)
+		return (false);
 	if (a->size == 1)
 		return (false);
 	if (a->size == 2)

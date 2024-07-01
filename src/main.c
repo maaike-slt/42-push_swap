@@ -6,7 +6,7 @@
 /*   By: msloot <msloot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 15:51:26 by msloot            #+#    #+#             */
-/*   Updated: 2024/06/19 20:29:29 by msloot           ###   ########.fr       */
+/*   Updated: 2024/07/01 17:53:11 by msloot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,16 +51,6 @@ void	test(t_stack *a)
 	ft_putstr("== END ==\n\n");
 }
 
-// TODO: move to start(), finish and test
-/*
-	if (in_order(&a))
-	{
-		while (a.head->value > a.head->prev->value)
-			rotate_a(&a);
-			// check if it is not faster to use reverse_rotate instead
-	}
-*/
-
 int	main(int argc, char *argv[])
 {
 	t_stack	a;
@@ -70,11 +60,10 @@ int	main(int argc, char *argv[])
 		return (1);
 	if (!a.size)
 		return (0);
-	// test(&a);
 	if (double_nbr(&a))
 	{
 		ft_puterr(\
-"one or more number(s) have been found double, no duplictes allowed");
+"one or more number(s) have been found double, no duplictes allowed\n");
 		ft_stack_clear(&a);
 		return (1);
 	}
