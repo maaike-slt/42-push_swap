@@ -6,7 +6,7 @@
 #    By: msloot <msloot@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/14 19:19:04 by msloot            #+#    #+#              #
-#    Updated: 2024/07/01 17:08:37 by msloot           ###   ########.fr        #
+#    Updated: 2024/07/01 21:19:32 by msloot           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -67,6 +67,7 @@ SRC_NAME =	parse.c \
 			action/sx.c action/sa.c action/sb.c action/ss.c action/pa.c action/pb.c \
 			action/ra.c action/rb.c action/rr.c action/rs.c \
 			action/rra.c action/rrb.c action/rrr.c action/rrs.c \
+			checker/handle_action.c \
 
 PUSH_SWAP_SRC_NAME = main.c $(SRC_NAME)
 CHECKER_SRC_NAME = checker/main.c $(SRC_NAME)
