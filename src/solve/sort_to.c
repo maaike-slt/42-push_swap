@@ -6,7 +6,7 @@
 /*   By: msloot <msloot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 18:31:46 by msloot            #+#    #+#             */
-/*   Updated: 2024/06/19 22:41:52 by msloot           ###   ########.fr       */
+/*   Updated: 2024/07/01 17:11:26 by msloot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	move_to_top_loop(t_stack *a, t_stack *b, t_value value, size_t index)
 	rotate_amount_b = calc_direction(find_dest_b(value, b), b->size);
 	while (rotate_amount_a > 0 && rotate_amount_b > 0)
 	{
-		reverse_rotate_both(a, b);
+		rotate_both(a, b);
 		rotate_amount_a--;
 		rotate_amount_b--;
 	}

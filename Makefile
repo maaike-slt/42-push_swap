@@ -6,7 +6,7 @@
 #    By: msloot <msloot@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/14 19:19:04 by msloot            #+#    #+#              #
-#    Updated: 2024/06/28 21:08:52 by msloot           ###   ########.fr        #
+#    Updated: 2024/07/01 17:08:37 by msloot           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -85,7 +85,7 @@ CHECKER_OBJ = $(addprefix $(OBJ_PATH), $(CHECKER_OBJ_NAME))
 
 define	progress_bar
 	i=0
-	while [[ $$i -le $(words $(PUSH_SWAP_SRC) $(CHECKER_SRC)) ]] ; do \
+	while [[ $$i -le $(words $(SRC_NAME) m m) ]] ; do \
 		printf " " ; \
 		((i = i + 1)) ; \
 	done
@@ -96,16 +96,17 @@ endef
 #	RULES	#
 
 all:		launch $(PUSH_SWAP_NAME) $(CHECKER_NAME)
-	@printf "\n$(B)$(MAG)$(PUSH_SWAP_NAME) and $(CHECKER_NAME) compiled$(D)\n"
 
 launch:
 	$(call progress_bar)
 
-$(PUSH_SWAP_NAME):	$(OBJ) $(LIBNAME)
+$(PUSH_SWAP_NAME):	$(PUSH_SWAP_OBJ) $(LIBNAME)	
 	$(CC) $(CFLAGS) $(PUSH_SWAP_OBJ) $(LIBNAME) -o $(PUSH_SWAP_NAME)
+	@printf "\n$(B)$(MAG)$(PUSH_SWAP_NAME) compiled$(D)\n"
 
-$(CHECKER_NAME):	$(OBJ) $(LIBNAME)
+$(CHECKER_NAME):	$(CHECKER_OBJ) $(LIBNAME)	
 	$(CC) $(CFLAGS) $(CHECKER_OBJ) $(LIBNAME) -o $(CHECKER_NAME)
+	@printf "\n$(B)$(MAG)$(CHECKER_NAME) compiled$(D)\n"
 
 $(OBJ_PATH)%.o: $(SRC_PATH)%.c
 	@mkdir -p $(dir $@) # 2> /dev/null || true
@@ -113,16 +114,14 @@ $(OBJ_PATH)%.o: $(SRC_PATH)%.c
 	@printf "█"
 
 $(LIBNAME):
-	@printf "$(D)$(B)$(BLU)\n$(PUSH_SWAP_NAME) and $(CHECKER_NAME) objects compiled\n\n$(D)"
 	@$(MAKE) -C $(LIBPATH)
 
 clean:
-	@$(RM) $(OBJ_NAME)
+	@$(RM) $(OBJ_PATH)
 	@$(MAKE) clean -C $(LIBPATH)
 	@echo "$(B)cleared$(D)"
 
 fclean:		clean
-	@$(RM) $(OBJ_PATH)
 	@$(RM) $(PUSH_SWAP_NAME)
 	@$(RM) $(CHECKER_NAME)
 	@$(MAKE) fclean -C $(LIBPATH)

@@ -6,7 +6,7 @@
 /*   By: msloot <msloot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 20:05:56 by msloot            #+#    #+#             */
-/*   Updated: 2024/06/19 22:43:07 by msloot           ###   ########.fr       */
+/*   Updated: 2024/07/01 17:09:59 by msloot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 static bool	continue_loop(t_stack *a, t_stack *b)
 {
-	if (in_order(a) && b->size == 0)
+	(void)b;
+	if (in_order(a))
 		return (false);
 	if (a->size == 3)
 	{
