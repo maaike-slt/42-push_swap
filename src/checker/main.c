@@ -6,7 +6,7 @@
 /*   By: msloot <msloot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 15:51:26 by msloot            #+#    #+#             */
-/*   Updated: 2024/07/01 22:08:27 by msloot           ###   ########.fr       */
+/*   Updated: 2024/07/02 16:42:35 by msloot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,17 +39,16 @@ int	main(int argc, char *argv[])
 		return (1);
 	if (!a.size)
 		return (0);
-	if (a.size == 1)
-		return (0);
 	if (a.size == 2)
 	{
 		if (a.head->value > a.head->next->value)
 			swap_stk(&a);
 	}
-	else if (!read_action(&a, &b))
+	else if (!read_action(&a, &b) && a.size != 1)
 		return (1);
-	if (in_order(&a) && a.head->value < a.head->next->value
-		&& a.head->value < a.head->prev->value && b.size == 0)
+	if (in_order(&a)
+		&& ((a.head->value < a.head->prev->value) || a.size == 1)
+		&& b.size == 0)
 		ft_putstr("OK\n");
 	else
 		ft_putstr("KO\n");
