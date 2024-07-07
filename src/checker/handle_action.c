@@ -6,7 +6,7 @@
 /*   By: msloot <msloot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 21:00:38 by msloot            #+#    #+#             */
-/*   Updated: 2024/07/07 13:16:50 by msloot           ###   ########.fr       */
+/*   Updated: 2024/07/07 14:04:08 by msloot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ static bool	handle_action(t_stack *a, t_stack *b, char *action)
 	else if (ft_strcmp(action, "sb") == 0)
 		swap_stk(b);
 	else if (ft_strcmp(action, "ss") == 0)
-		swap_both(a, b);
+		swap_both(a, b, false);
 	else
 		return (false);
 	return (true);

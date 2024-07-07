@@ -6,7 +6,7 @@
 /*   By: msloot <msloot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/08 14:14:14 by msloot            #+#    #+#             */
-/*   Updated: 2024/06/16 17:07:35 by msloot           ###   ########.fr       */
+/*   Updated: 2024/07/07 14:02:22 by msloot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,6 @@
 
 void	reverse_rotate_stk(t_stack *stk)
 {
-	stk->head = stk->head->prev;
+	if (stk->head && stk->head->prev)
+		stk->head = stk->head->prev;
 }
