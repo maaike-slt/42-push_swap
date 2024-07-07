@@ -6,7 +6,7 @@
 /*   By: msloot <msloot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 21:00:38 by msloot            #+#    #+#             */
-/*   Updated: 2024/07/01 21:25:45 by msloot           ###   ########.fr       */
+/*   Updated: 2024/07/07 13:16:50 by msloot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,24 +46,25 @@ static bool	check_action(t_stack *a, t_stack *b, char *action)
 	if (action[ft_strlen(action) - 1] == '\n')
 		action[ft_strlen(action) - 1] = '\0';
 	if (!handle_action(a, b, action))
-	{
-		ft_putstr_fd("Error\n", STDERR_FILENO);
 		return (false);
-	}
 	return (true);
 }
 
 bool	read_action(t_stack *a, t_stack *b)
 {
 	char	*action;
+	bool	error;
 
+	error = false;
 	action = get_next_line(0);
 	while (action != NULL)
 	{
 		if (!check_action(a, b, action))
-			return (false);
+			error = true;
 		free(action);
 		action = get_next_line(0);
 	}
-	return (true);
+	if (error)
+		ft_putstr_fd("Error\n", STDERR_FILENO);
+	return (!error);
 }

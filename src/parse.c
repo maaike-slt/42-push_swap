@@ -6,7 +6,7 @@
 /*   By: msloot <msloot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 21:30:35 by msloot            #+#    #+#             */
-/*   Updated: 2024/06/18 19:36:50 by msloot           ###   ########.fr       */
+/*   Updated: 2024/07/07 13:32:30 by msloot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ static t_node	*parse_node(char *str)
 "one or more of the given numbers does not fit within int range\n"), NULL);
 	number = ft_aton(str);
 	if (!over_and_underflow_int(number))
-		return (false);
+		return (NULL);
 	new = ft_node_new(number);
 	if (!new)
 		return (ft_puterr(\
@@ -62,6 +62,11 @@ static bool	handle_arg(const char *str, t_stack *a)
 	size_t	i;
 	t_node	*new;
 
+	if (str && str[0] == '\0')
+	{
+		ft_putstr_fd("Error\n", STDERR_FILENO);
+		return (false);
+	}
 	split = ft_split_whitespace(str);
 	i = 0;
 	while (split[i] != NULL)

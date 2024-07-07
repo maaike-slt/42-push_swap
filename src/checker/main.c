@@ -6,7 +6,7 @@
 /*   By: msloot <msloot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 15:51:26 by msloot            #+#    #+#             */
-/*   Updated: 2024/07/02 16:42:35 by msloot           ###   ########.fr       */
+/*   Updated: 2024/07/07 13:22:27 by msloot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,10 @@
 static bool	argument_checker(int argc, char *argv[], t_stack *a)
 {
 	if (!parse(argc, argv, a))
+	{
+		ft_stack_clear(a);
 		return (false);
+	}
 	if (a->size == 0)
 		return (true);
 	if (double_nbr(a))
@@ -39,12 +42,7 @@ int	main(int argc, char *argv[])
 		return (1);
 	if (!a.size)
 		return (0);
-	if (a.size == 2)
-	{
-		if (a.head->value > a.head->next->value)
-			swap_stk(&a);
-	}
-	else if (!read_action(&a, &b) && a.size != 1)
+	else if (!read_action(&a, &b))
 		return (1);
 	if (in_order(&a)
 		&& ((a.head->value < a.head->prev->value) || a.size == 1)

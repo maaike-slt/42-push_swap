@@ -6,7 +6,7 @@
 #    By: msloot <msloot@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/14 19:19:04 by msloot            #+#    #+#              #
-#    Updated: 2024/07/01 21:19:32 by msloot           ###   ########.fr        #
+#    Updated: 2024/07/07 13:27:53 by msloot           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CC = 	cc
 RM = 	rm -rf
 
 CFLAGS =	-Wall -Werror -Wextra
-CFLAGS +=	-g
+# CFLAGS +=	-g
 # CFLAGS +=	-fsanitize=address
 
 # **************************************************************************** #
@@ -96,7 +96,9 @@ endef
 # *************************************************************************** #
 #	RULES	#
 
-all:		launch $(PUSH_SWAP_NAME) $(CHECKER_NAME)
+all:		launch $(PUSH_SWAP_NAME)
+
+bonus:	all $(CHECKER_NAME)
 
 launch:
 	$(call progress_bar)
@@ -129,6 +131,6 @@ fclean:		clean
 
 re:			fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all bonus clean fclean re
 
 # **************************************************************************** #
